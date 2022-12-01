@@ -159,8 +159,9 @@ def get_data():
         json.dump(items_prices, file, indent=4, ensure_ascii=False)
 
 def get_result():
-    with open("1/2_items.json") as file:
+    with open("1/2_items.json", encoding="utf-8") as file:
         products_data = json.load(file)
+        
 
     with open("1/4_item_prices.json") as file:
         products_prices = json.load(file)
@@ -178,9 +179,9 @@ def get_result():
         item["item_bonus"] = prices.get("item_bonus")
 
 
-    
     with open("1/5_result.json", "w", encoding="utf-8") as file:
         json.dump(products_data, file, indent=4, ensure_ascii=False)
+
 
 
 def main():
